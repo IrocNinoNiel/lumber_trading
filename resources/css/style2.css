@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+}
+
+
+body{
+    background-color: #0077B6;
+  
+    
+}
+
+.login-container{
+    position: absolute;
+width: 474px;
+height: 541px;
+left: 450px;
+top: 115px;
+font-style: normal;
+font-weight: normal;
+background: #FFFFFF;
+border-radius: 5px;
+}
+
+
+.registerForms{
+    width: 319px;
+    height: 39px;
+    left:70px;
+    top: 120px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.username{
+    position: absolute;
+    width: 319px;
+    height: 39px;
+    left:70px;
+    top: 120px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+
+}
+
+.password{
+    position: absolute;
+    width: 319px;
+    height: 39px;
+    left: 70px;
+    top: 180px;
+    border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+transition: all 0.3s ease;
+
+
+}
+
+.name{
+    /* position: absolute; */
+    width: 317px;
+    height: 36px;
+    left: 70px;
+    top: 60px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    
+    
+}
+
+
+.con-password{
+    position: absolute;
+width: 317px;
+height: 36px;
+left: 70px;
+top: 240px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+transition: all 0.3s ease;
+
+}
+
+.sub-button{
+    position: absolute;
+width: 145px;
+height: 39px;
+left: 160px;
+top:320px;
+border-style: none;
+background: #0077B6;
+border-radius: 15px;
+color: white;
+
+
+}
+
+.sub-button:hover{
+    background:#0093e2 ;
+}
+
+
+
+.help a{
+    position: absolute;
+width: 98px;
+height: 21px;
+left: 1041px;
+top: 57px;
+color: #FFF9F9;
+}
+
+
+.forgot-pass a{
+    
+position: absolute;
+width: 161px;
+height: 21px;
+left: 250px;
+top:250px;
+color:#0077B6;;
+}
+
+
+.forgot-pass a:hover{
+    color:#0093e2 ;
+}
+
+.line{
+    
+width: 319px;
+height: 0px;
+
+border: 1px solid #0077B6;
+}
+
+.log-button{
+    position: absolute;
+width: 145px;
+height: 39px;
+left: 160px;
+top:320px;
+border-style: none;
+background: #0077B6;
+border-radius: 15px;
+color: white;
+}
+
+.log-button:hover{
+    background:#0093e2 ;
+}
+
+.login {
+    position: absolute;
+width: 300px;
+height: 21px;
+left: 150px;
+top: 450px;
+
+
+}
+
+.login a{
+    color: #0077B6;
+}
+
+.login a:hover{
+  color:#0093e2 ;
+}
+
+.signup {
+    position: absolute;
+width: 300px;
+height: 21px;
+left: 116px;
+top: 550px;
+
+
+}
+
+.signup a{
+    color: #0077B6;
+}
+
+.signup a:hover{
+  color:#0093e2 ;
+}
+

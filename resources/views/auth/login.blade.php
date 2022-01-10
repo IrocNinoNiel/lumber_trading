@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +69,52 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+    <div class="login-container">
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+
+            {{-- <input type="email" placeholder="Email" class="username"> --}}
+            <div>
+                <input id="email" type="email" class="username @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <input type="password" placeholder="Password" class="password">
+            <div>
+                <input id="password" type="password" class="password @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <div class="forgot-pass">
+                <a href="url">Forgot password?</a>
+            </div>
+    
+            <div class="line"></div>
+
+            <button type="submit" class="log-button">
+                {{ __('Login') }}
+            </button>
+
+        </form>
+
+        <div class="login">
+            <label>New to RDF? </label><a href="{{ route('register') }}">Sign Up</a>
+        </div>
+
+        
+    </div>
+    <div class="help">
+        <a href="url">Help</a>
+    </div>
 @endsection

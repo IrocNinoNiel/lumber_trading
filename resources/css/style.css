@@ -1,0 +1,958 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+   
+    margin:auto;
+}
+.outer{
+    position:relative;
+  
+    background-color: #E8E0E0;
+    width: 1263px;
+    height: 900px;
+    align-items: center;
+    align-content: center;
+    margin:auto;
+}
+
+
+.rectangle1 {
+width:1263px;
+height: 237px;
+
+
+background: #0077B6;
+}
+.search input{
+position: absolute;
+width: 480px;
+height: 40px;
+left: 640px;
+top: 141px;
+text-indent:10%;
+
+
+background: #FFFFFF;
+border-radius: 5px;
+border-style: none;
+}
+
+.search-icon{
+position: absolute;
+width: 24px;
+height: 24px;
+left: 650px;
+top: 151px;
+color: grey;
+
+}
+.cart-icon{
+position: absolute;
+width: 45px;
+height: 41px;
+left: 1155px;
+top: 142px;
+color: #FFFFFF;
+}
+.bell-icon{
+position: absolute;
+width: 21px;
+height: 21px;
+left: 780px;
+top: 34px;
+color: #FFFFFF;
+}
+
+.bell-icon:hover{
+    color: #f1f1f1;
+}
+
+.cart-icon:hover{
+color: #f1f1f1;
+}
+
+.notification label{
+position: absolute;
+width: 98px;
+height: 21px;
+left: 810px;
+top: 34px;
+color: white;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+
+}
+
+
+
+.sign-up label{
+position: absolute;
+width: 56px;
+height: 21px;
+left: 1020px;
+top: 34px;
+color: white;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 21px;
+}
+
+
+.sign-up label:hover{
+    color: #f1f1f1;
+}
+
+.login button{
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 4px 25px;
+
+position: absolute;
+width: 91px;
+height: 29px;
+left: 1100px;
+top: 30px;
+
+background: #FFFFFF;
+border-radius: 15px;
+border-style: none;
+}
+
+.login button:hover{
+    color: #0077B6;
+}
+
+.user-icon{
+    position: absolute;
+top: 34px;
+left: 990px;
+color: white;
+
+}
+
+
+
+.user label{
+    position: absolute;
+width: 98px;
+height: 40px;
+left: 1020px;
+top: 34px;
+color: white;
+font-size: 14px;
+line-height: 21px;
+}
+
+.user label:hover{
+    color: #f1f1f1;
+}
+
+
+.container{
+    position: absolute;
+width: 1240px;
+height: 625px;
+left: 10px;
+top: 260px;
+
+background: #FFFFFF;
+border-radius: 3px;
+}
+
+h2{
+    position: absolute;
+left: 30px;
+top: 2%;
+overflow: hidden;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+margin:auto;
+
+
+
+color: #474646;
+}
+
+.lumber {
+    position: absolute;
+        width: 173px;
+        height: 140px;
+        left: 40px;
+        top: 180px;
+        border-radius: 5px;
+        border-style: none;
+        background-image: url(Product/2.jpg);
+        background-size: cover;
+       
+        
+    
+}
+
+.overlay-lumber button {
+    position: absolute;
+        width: 173px;
+        height: 140px;
+        left:  0;
+        top: 0;
+        border-radius: 5px;
+        border-style: none;
+        background: rgba(0, 0, 0, 0.27);
+        color: white;
+        font-size: 24px;
+    
+
+}
+
+.overlay-lumber button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.plywood{
+    position: absolute;
+    width: 173px;
+    height: 140px;
+    left: 240px;
+    top: 180px;
+    
+    background: url(Product/1.jpg);
+    border-radius: 5px;
+}
+
+
+.overlay-plywood button{
+    position: absolute;
+    width: 173px;
+    height: 140px;
+    left:  0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+
+
+}
+
+
+.overlay-plywood button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.steelbars{
+    position: absolute;
+width: 173px;
+height: 140px;
+left: 440px;
+top: 180px;
+border-radius: 5px;
+background: url(Product/3.jpg);
+
+}
+
+.steelbars button{
+    position: absolute;
+    width: 173px;
+    height: 140px;
+    left:0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+}
+
+
+.steelbars button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+
+.nails{
+    position: absolute;
+width: 173px;
+height: 140px;
+left: 640px;
+top: 180px;
+border-radius: 5px;
+background: url(Product/4.jpg);
+
+}
+
+.overlay-nails button{
+    position: absolute;
+    width: 173px;
+    height: 140px;
+    left: 0x;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+}
+
+
+.overlay-nails button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+
+.amakan{
+    position: absolute;
+width: 170px;
+height: 143px;
+left: 840px;
+top: 180px;
+border-radius: 5px;
+background: url(Product/5.jpg);
+background-size: cover;
+}
+
+.overlay-amakan button{
+    position: absolute;
+    width: 170px;
+    height: 143px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+
+}
+
+
+.overlay-amakan button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.sawdust{
+    position: absolute;
+width: 171px;
+height: 141px;
+left: 1040px;
+top: 180px;
+border-radius: 5px;
+background: url(Product/6.jpg);
+background-size: cover;
+}
+
+.overlay-sawdust button{
+    position: absolute;
+    width: 171px;
+    height: 141px;
+    left:0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+
+}
+
+.overlay-sawdust button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.doorknob{
+    position: absolute;
+width: 177px;
+height: 141px;
+left: 40px;
+top: 400px;
+border-radius: 5px;
+background: url(Product/7.jpg);
+background-size: cover;
+
+}
+
+.overlay-doorknob button{
+    position: absolute;
+    width: 177px;
+    height: 141px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+
+}
+
+.overlay-doorknob button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.padlock{
+    position: absolute;
+width: 173px;
+height: 140px;
+left: 240px;
+top: 400px;
+border-radius: 5px;
+background: url(Product/8.jpg);
+background-size: cover;
+
+
+}
+
+.overlay-padlock button{
+    position: absolute;
+    width: 173px;
+    height: 140px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+    background: rgba(0, 0, 0, 0.27);
+    color: white;
+    font-size: 24px;
+}
+
+
+.overlay-padlock button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.rod{
+    position: absolute;
+width: 173px;
+height: 140px;
+left: 440px;
+top: 400px;
+border-radius: 5px;
+background: url(Product/9.jpg);
+background-size: cover;
+}
+
+.overlay-rod button{
+    position: absolute;
+width: 173px;
+height: 140px;
+left: 0;
+top: 0;
+border-radius: 5px;
+border-style: none;
+background: rgba(0, 0, 0, 0.27);
+color: white;
+font-size: 24px;
+}
+
+.overlay-rod button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.sandpaper{
+    position: absolute;
+width: 173px;
+height: 140px;
+left: 640px;
+top: 400px;
+border-radius: 5px;
+background: url(Product/10.jpg);
+background-size: cover;
+
+}
+
+.overlay-sandpaper button{
+    position: absolute;
+    width: 173px;
+    height: 140px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+background: rgba(0, 0, 0, 0.27);
+color: white;
+font-size: 24px;
+}
+
+.overlay-sandpaper button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+
+
+.wire{
+    position: absolute;
+width: 173px;
+height: 145px;
+left: 840px;
+top: 400px;
+border-radius: 5px;
+background: url(Product/11.jpg);
+background-size: cover;
+
+}
+
+.overlay-wire button{
+    position: absolute;
+width: 173px;
+height: 145px;
+left: 0;
+top: 0;
+border-radius: 5px;
+border-style: none;
+background: rgba(0, 0, 0, 0.27);
+color: white;
+font-size: 24px;
+
+}
+
+.overlay-wire button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.roof{
+    position: absolute;
+width: 170px;
+height: 143px;
+left: 1040px;
+top: 400px;
+border-radius: 5px;
+background: url(Product/12.jpg);
+background-size: cover
+
+}
+
+.overlay-roof button{
+    position: absolute;
+    width: 170px;
+    height: 143px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    border-style: none;
+background: rgba(0, 0, 0, 0.27);
+color: white;
+font-size: 24px;
+
+}
+
+.overlay-roof button:hover{
+    background: rgba(255, 255, 255, 0.534);
+    color: #0077B6;
+  
+}
+
+.logo{
+    position: absolute;
+width: 205px;
+height: 180px;
+left: 20px;
+top: 26px;
+
+background: url(wood-house-logo-design-template-vector-33656551.jpg);
+border-radius: 3px;
+background-size: cover;
+}
+
+
+.item-selected{
+    position: absolute;
+    width: 177px;
+    height: 141px;
+    left: 500px;
+    top:70px;
+        border-radius: 5px;
+        border-style: none;
+        background-image: url(Product/2.jpg);
+        background-size: cover;
+}
+
+
+.size{
+    
+position: absolute;
+width: 98px;
+height: 21px;
+left: 200px;
+top: 300px;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+
+}
+
+.stock{
+    position: absolute;
+    width: 98px;
+    height: 21px;
+    left: 500px;
+    top: 300px;
+    font-weight: 600;
+font-size: 24px;
+line-height: 36px
+    
+}
+
+.quantity{
+    position: absolute;
+width: 112px;
+height: 32px;
+left: 900px;
+top: 300px;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
+
+}
+
+.price{
+    position: absolute;
+width: 98px;
+height: 21px;
+left: 560px;
+top: 220px;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+
+}
+
+.select-size{
+    position: absolute;
+width: 120px;
+height: 24px;
+left: 200px;
+top: 350px;
+}
+
+.stock-num {
+    position: absolute;
+    width: 98px;
+    height: 21px;
+    left: 500px;
+    top: 350px;
+}
+
+.quantity-select{
+
+     position: absolute;
+    width: 112px;
+    height: 32px;
+    left: 900px;
+    top: 350px;
+    
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+.add-cart{
+    position: absolute;
+width: 163px;
+height: 35px;
+left: 300px;
+top: 500px;
+color: white;
+background: #0077B6;
+border-radius: 5px;
+border-style: none;
+}
+
+.add-cart:hover{
+    background:#0093e2 ;
+}
+
+
+.back{
+    position: absolute;
+width: 163px;
+height: 35px;
+left: 700px;
+top: 500px;
+border-radius: 5px;
+border: 1px solid #2A2828;
+box-sizing: border-box;
+background-color: white;
+}
+
+.back:hover{
+    background: #f1f1f1;
+}
+
+
+.dropdown-content {
+    left: 1000px;
+    top: 60px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+      
+.dropdown-content a {
+        color:#2A2828;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+
+  .user:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+    }
+
+
+
+table {
+    border-collapse: collapse;
+    width: 1200px;
+    top: 110px;
+    position: absolute;
+    left: 20px;
+
+    border-collapse: separate;
+    border-spacing: 0 16px;
+    
+    
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+     padding: 5px;
+  }
+
+  td{
+      text-indent: 10%;
+      
+  }
+
+
+ 
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color:#0077B6;
+    color: white;
+    text-indent: 20%;
+
+  }
+
+  .colspan{
+    column-count: 2;
+    column-gap: 20px;
+  }
+
+.product-label{
+    position: absolute;
+width: 88px;
+height: 19px;
+left: 140px;
+top: 100px;
+}
+
+.checkbox{
+    width: 15px;
+height: 15px;
+
+position: absolute;
+top:100px;
+left:10px;
+background: #0077B6;
+}
+
+.checkout_placeorder{
+    position: absolute;
+width: 163px;
+height: 35px;
+left: 1000px;
+top: 550px;
+background-color: #0077B6;
+color: white;
+border-style: none;
+border-radius: 5px;
+}
+
+.checkout_placeorder:hover{
+    background:#0093e2 ;
+}
+
+.totalprice{
+    position: absolute;
+width: 110px;
+height: 30px;
+left: 800px;
+top:550px;
+font-weight: 500;
+font-size:18px;
+color: #474646;
+}
+
+.line{
+    position: absolute;
+width: 1235.5px;
+height: 0px;
+left: 11.5px;
+top: 699.5px;
+
+border: 1px solid #0077B6;
+}
+
+.checkout-item{
+    position: absolute;
+width: 1200px;
+height: 223px;
+left: 20px;
+top: 200px;
+
+background:#f2f2f2;
+
+}
+
+.customer-info{
+    position: absolute;
+    width: 1200px;
+    height: 131px;
+left: 20px;
+top: 60px;
+
+background:#f2f2f2;
+
+}
+
+.overlay2{
+    position: absolute;
+width: 1263px;
+height: 900px;
+left: 0px;
+top: -1px;
+overflow: hidden;
+background: rgba(42, 40, 40, 0.12);
+}
+
+.details-form{
+    position: absolute;
+width: 682px;
+height: 682px;
+left: 322px;
+top: 83px;
+
+background: #FFFFFF;
+border-radius: 3px;
+}
+
+.outer-border{
+    width: 1200px;
+    height: 380px;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    top: 50px;
+}
+
+
+            .outer-border::-webkit-scrollbar {
+                display: none;
+            }
+
+
+.payment{
+    width: 1200px;
+    height: 223px;
+    background:#f2f2f2;   
+     position: absolute;
+     left: 20px;;
+    top: 450px;
+}
+
+
+.purchase-item{
+    position: absolute;
+    width: 1200px;
+    height: 300px;
+left: 20px;
+top: 60px;
+
+background:#f2f2f2;
+}
+
+
+.home{
+    position: absolute;
+    left: 600px;
+    top:34px;
+    color: white;
+}
+
+.account-info{
+    position: absolute;
+width: 544px;
+height: 500px;
+left: 32px;
+top: 100px;
+
+background: #0077B6;
+border-radius: 5px;
+}
+
+.profile{
+    
+position: absolute;
+width: 165px;
+height: 147px;
+left: 30px;
+top:50px;
+border-radius: 100%;
+background: #FFFFFF;
+}
+
+.user-details{
+    position: absolute;
+width: 475px;
+height: 210px;
+left: 30px;
+top: 250px;
+
+background: #FFFFFF;
+border-radius: 5px;
+}
