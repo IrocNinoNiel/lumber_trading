@@ -63,9 +63,13 @@
                     <button onclick="document.location='{{ route('login') }}'">Login</button>
                 </div>
             @else
+                <div class="notification" onclick="document.location='Page2.html'">
+                    <i class="far fa-bell fa-lg bell-icon"></i>
+                    <label>Notification</label>
+                </div>
                 <div class="user">
                     <i class="far fa-user-circle fa-lg user-icon"></i>
-                    <label>User</label>
+                    <label>{{ Auth::user()->name }}</label>
                     <div class="dropdown-content">
                         <a href="{{ route('profile') }}">My Account</a>
                         <a href="{{ route('cart') }}">My Purchases</a>
@@ -81,12 +85,6 @@
                     </div>
                 </div>
             @endguest  
-    
-    
-            <div class="notification" onclick="document.location='Page2.html'">
-                <i class="far fa-bell fa-lg bell-icon"></i>
-                <label>Notification</label>
-            </div>
     
         </div>
         <main class="py-4">

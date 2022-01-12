@@ -8,15 +8,14 @@
      
     <div class="account-info">
 
-        <div class="profile"> </div>
-
+        <div class="profile"></div>
         <label
         style="position: absolute;
         width: 120px;
         height: 21px;
         left: 230px;
         top: 150px;
-        color: white;">User name</label>
+        color: white;">{{ Auth::user()->name }}</label>
 
 
         <button style="position: absolute;
@@ -47,7 +46,7 @@
             top: 45px;
             font-weight: bold;
             font-size: 16px;
-            ">Jane Doe</label>
+            ">{{ Auth::user()->username }}</label>
 
             <label
             style="position: absolute;
@@ -65,7 +64,7 @@
             top: 125px;
             font-weight: bold;
             font-size: 16px;
-            ">+639123456789</label>
+            ">{{ Auth::user()->contact_number }}</label>
 
             <button style="position: absolute;
             width: 110px;
