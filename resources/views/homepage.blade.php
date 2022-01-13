@@ -1,20 +1,28 @@
 @extends('layouts.homeApp')
 
 @section('content')
+
 <div class="container">
     <h2>Products</h2>
 
-    <div class="lumber" >
+    @foreach ($products as $product)
+        <div class="{{$product->name}}" >
+            <div class="overlay-{{$product->name}}">
+                <button onclick="document.location='{{ route('cart.addcart',$product->id) }}'">{{$product->name}}</button>
+            </div>
+        </div>
+    @endforeach
+    {{-- <div class="lumber" >
         <div class="overlay-lumber">
             <button onclick="document.location='Page2.html'">Lumber</button>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="plywood" >
+    {{-- <div class="plywood" >
         <div class="overlay-plywood">
             <button>Plywood</button>
         </div>
-    </div>
+    </div> --}}
 
     <div class="steelbars" >
         <div class="overlay-steelbars">

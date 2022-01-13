@@ -1,113 +1,81 @@
 @extends('layouts.homeApp')
 
 @section('content')
+
+@include('inc.message')
+
 <div class="container">
-    <h2>My Purchases</h2>
+    <h2>Cart</h2>
 
- <div class="outer-border">
-     
-    <div class="purchase-item">
+    <form method="POST" action="">
+        @csrf
 
-        <label style="position: absolute;
-        width: 173px;
-        height: 30px;
-        left: 40px;
-        top: 20px;
-        color:#0077B6">Customer Details</label>
+    <div class="outer-border">
+        <table>
+            <tr>
+                <th></th>
+                <th></th>
+                <th class="colspan">Product</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
 
+            {{-- <tr>
+                <td><input type="checkbox" checked ></td>
+                <td><img src="{{asset('css/Product/2.jpg')}}" style="width: 89px;
+                    height: 75px; "></td>
+                <td><Label style="color:#474646;"></Label>Lumber</Label></td>
+                <td  style="color:#474646;" >P48</td>
+                <td> <input placeholder="5" type="number"  step="3" style="width: 20%;"></td>
+                <td  style="color:#474646;">P240</td>
+                <td><a onMouseOver="this.style.color='red'"
+                onMouseOut="this.style.color='#474646'"  
+                href="url" style="text-decoration: none;
+                color:#474646;">Delete</a></td>
+            </tr> --}}
 
-        <label style="position: absolute;
-        font-size: 14;
-        left: 60px;
-        top: 90px;">Jane Doe</label>
-
-        <label style="position: absolute;
-        font-size: 14;
-        left: 150px;
-        top: 90px;">(+963 904 484 9494)</label>
-
-        <label style="position: absolute;
-        font-size: 14;
-        left: 400px;
-        top: 90px;">  090, Zone1, Carmen, Cagayan  De Oro City</label>
-
-
-            <img src="{{asset('css/download.jpg')}}" style="position: absolute;
-            width: 91px;
-            height: 75px;
-            left: 800px;
-            top: 40px;
-            background-size: cover;
-            border-radius: 5px;
-            ">
-
-
-        <button style="position: absolute;
-        width: 118px;
-        height: 35px;
-        left: 1000px;
-        top:60px;
-        background-color: #0077B6;
-        color: white;
-        border-style: none;
-        border-radius: 5px;" onclick="document.location='Page8.html'">Edit info</button>
-        
-   
-        
-        <img src="{{asset('css/Product/2.jpg')}}" style="position: absolute;
-        width: 89px;
-        height: 75px;
-        left: 100px;
-        top: 160px; ">
-
-
-        <label style="position: absolute;
-        width: 88px;
-        height: 19px;
-        left: 200px;
-        top: 190px;
-        line-height: 27px;
-        color: #474646;">Lumber</label>
-
-
-        <label style="position: absolute;
-        width: 88px;
-        height: 19px;
-        left: 430px;
-        top: 190px;
-        line-height: 27px;
-        color: #474646;">P48</label>
-
-        <label style="position: absolute;
-        width: 88px;
-        height: 19px;
-        left: 640px;
-        top: 190px;
-        line-height: 27px;
-        color: #474646;">5x</label>
-
-        <label style="position: absolute;
-        width: 88px;
-        height: 19px;
-        left: 800px;
-        top: 190px;
-        line-height: 27px;
-        color: #474646;">Total: P240</label>
-
-        <label style="position: absolute;
-       width: 139px;
-        height: 19px;
-        left: 1000px;
-        top: 190px;
-        line-height: 27px;
-        color: #474646;">Status: Pending</label>
-
+            @foreach ($carts as $cart)
+                <tr>
+                    <td><input type="checkbox" checked name="order[]" value="{{$cart->id}}" onchange="manageCart(this,{{$cart->total_price}})"></td>
+                    <td><img src="{{asset('css/Product/'.$cart->product->product_img)}}" style="width: 89px;
+                        height: 75px; "></td>
+                    <td><Label style="color:#474646;"></Label>{{$cart->size->name}} {{$cart->product->name}}</Label></td>
+                    <td  style="color:#474646;" >P{{$cart->size->price}}</td>
+                    <td> <input placeholder="5" type="number"  step="3" style="width: 20%;" value="{{$cart->product_qty}}" disabled></td>
+                    <td  style="color:#474646;">P{{$cart->total_price}}</td>
+                    <td><a onMouseOver="this.style.color='red'"
+                    onMouseOut="this.style.color='#474646'"  
+                        href="url" style="text-decoration: none;
+                        color:#474646;">Delete</a></td>
+                </tr>
+            @endforeach
+        </table>
 
     </div>
     
- </div>
-    
+    <button type="submit" class="checkout_placeorder" onclick="document.location='Page7.html'">Checkout</button>
+
+    </form>
+
+    <p class="totalprice">TOTAL: P<label id="totalPriceUI">{{$carts->sum('total_price')}}</label></p>
 </div>
 
 <div class="line"></div>
+
+<script>
+    function manageCart(checkbox,price) {
+        var totalPrice = parseInt(document.getElementById("totalPriceUI").innerHTML);
+        console.log(totalPrice)
+        if(checkbox.checked == true){
+            var updateTotal = totalPrice+price;
+            document.getElementById("totalPriceUI").innerHTML = updateTotal
+        }else{
+            var updateTotal = totalPrice-price;
+            document.getElementById("totalPriceUI").innerHTML = updateTotal
+        }
+    }
+</script>
+
 @endsection

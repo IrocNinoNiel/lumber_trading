@@ -157,13 +157,13 @@ line-height: 21px;
 
 .container{
     position: absolute;
-width: 1240px;
-height: 625px;
-left: 10px;
-top: 260px;
+    width: 1240px;
+    height: 625px;
+    left: 10px;
+    top: 260px;
 
-background: #FFFFFF;
-border-radius: 3px;
+    background: #FFFFFF;
+    border-radius: 3px;
 }
 
 h2{
@@ -583,7 +583,7 @@ background-size: cover;
 }
 
 
-.item-selected{
+/* .item-selected{
     position: absolute;
     width: 177px;
     height: 141px;
@@ -593,7 +593,7 @@ background-size: cover;
         border-style: none;
         background-image: url(Product/2.jpg);
         background-size: cover;
-}
+} */
 
 
 .size{

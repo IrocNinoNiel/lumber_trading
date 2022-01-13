@@ -8,7 +8,29 @@
      
     <div class="account-info">
 
-        <div class="profile"></div>
+        <div class="profile">
+            @if (Auth::user()->user_img == '')
+                <img src="{{asset('css/profile/anon.jpg')}}" style="position: absolute;
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    top: 20px;
+                    left: 35px;
+                    background-size: cover;
+                    border-radius: 5px;
+                ">
+            @else
+                <img src="{{asset('css/profile/anon.jpg')}}" style="position: absolute;
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    top: 20px;
+                    left: 35px;
+                    background-size: cover;
+                    border-radius: 5px;
+                ">
+            @endif
+        </div>
         <label
         style="position: absolute;
         width: 120px;
