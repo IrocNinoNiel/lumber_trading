@@ -36,5 +36,14 @@ Route::group(['middleware' => 'CheckRole:buyer'],function(){
 });
 
 Route::group(['middleware' => 'CheckRole:admin'],function(){
-
+    Route::get('/admin/order', [App\Http\Controllers\AdminController::class, 'order'])->name('admin.order');
+    Route::get('/admin/processing', [App\Http\Controllers\AdminController::class, 'processing'])->name('admin.processing');
+    Route::get('/admin/pickup', [App\Http\Controllers\AdminController::class, 'pickup'])->name('admin.pickup');
+    Route::get('/admin/deliver', [App\Http\Controllers\AdminController::class, 'deliver'])->name('admin.deliver');
+    Route::get('/admin/complete', [App\Http\Controllers\AdminController::class, 'complete'])->name('admin.complete');
+    Route::post('/admin/order/reject/{id}', [App\Http\Controllers\AdminController::class, 'reject'])->name('admin.reject');
+    Route::post('/admin/order/accept/{id}', [App\Http\Controllers\AdminController::class, 'accept'])->name('admin.accept');
+    Route::post('/admin/order/processing/{id}', [App\Http\Controllers\AdminController::class, 'done_process'])->name('admin.done_process');
+    Route::post('/admin/order/completed/{id}', [App\Http\Controllers\AdminController::class, 'completed'])->name('admin.completed');
+    
 });

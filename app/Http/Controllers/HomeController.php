@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,8 +24,17 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {   
+
         $products = Product::all();
-        return view('homepage')->with('products',$products);
+        if(auth()->user()){
+            if(auth()->user()->user_type_id == 1){
+                return view('admin.index')->with('products',$products);
+            }else{
+                return view('homepage')->with('products',$products);
+            }
+        }else{
+            return view('homepage')->with('products',$products);
+        }
     }
 }

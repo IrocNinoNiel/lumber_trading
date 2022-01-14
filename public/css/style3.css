@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+}
+
+
+body{
+   
+    margin:auto;
+}
+
+.login-container{
+    position: absolute;
+width: 474px;
+height: 541px;
+left: 450px;
+top: 115px;
+font-style: normal;
+font-weight: normal;
+background: #FFFFFF;
+border-radius: 5px;
+}
+
+
+.username{
+    position: absolute;
+width: 319px;
+height: 39px;
+left:70px;
+top: 120px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+transition: all 0.3s ease;
+
+}
+
+.password{
+    position: absolute;
+    width: 319px;
+    height: 39px;
+    left: 70px;
+    top: 180px;
+    border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+transition: all 0.3s ease;
+
+
+}
+
+.name{
+    position: absolute;
+    width: 317px;
+    height: 36px;
+    left: 70px;
+    top: 60px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    
+    
+}
+
+
+.con-password{
+    position: absolute;
+width: 317px;
+height: 36px;
+left: 70px;
+top: 240px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+transition: all 0.3s ease;
+
+}
+
+.sub-button{
+    position: absolute;
+width: 145px;
+height: 39px;
+left: 160px;
+top:320px;
+border-style: none;
+background: #0077B6;
+border-radius: 15px;
+color: white;
+
+
+}
+
+.sub-button:hover{
+    background:#0093e2 ;
+}
+
+
+
+.help a{
+    position: absolute;
+width: 98px;
+height: 21px;
+left: 1041px;
+top: 57px;
+color: #FFF9F9;
+}
+
+
+.forgot-pass a{
+    
+position: absolute;
+width: 161px;
+height: 21px;
+left: 250px;
+top:250px;
+color:#0077B6;;
+}
+
+
+.forgot-pass a:hover{
+    color:#0093e2 ;
+}
+
+.line{
+    position: absolute;
+width: 319px;
+height: 0px;
+left: 70px;
+top: 380px;
+
+border: 1px solid #0077B6;
+}
+
+.log-button{
+    position: absolute;
+width: 145px;
+height: 39px;
+left: 160px;
+top:320px;
+border-style: none;
+background: #0077B6;
+border-radius: 15px;
+color: white;
+}
+
+.log-button:hover{
+    background:#0093e2 ;
+}
+
+.login {
+    position: absolute;
+width: 300px;
+height: 21px;
+left: 150px;
+top: 450px;
+
+
+}
+
+.login a{
+    color: #0077B6;
+}
+
+.login a:hover{
+  color:#0093e2 ;
+}
+
+
+
+.outer{
+    position:relative;
+  
+    background-color: #E8E0E0;
+    width: 1263px;
+    height: 900px;
+    align-items: center;
+    align-content: center;
+    margin:auto;
+    
+
+
+}
+
+
+.rectangle1 {
+    width:1263px;
+    height: 150px;
+    
+    
+    background: #0077B6;
+    }
+    .search input{
+    position: absolute;
+    width: 220px;
+    height: 40px;
+    left: 60px;
+    top: 111px;
+    text-indent:20%;
+    
+    
+    background: #FFFFFF;
+    border-radius: 5px;
+  border: 1px solid #ccc;
+    }
+
+
+    .search-icon{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 70px;
+        top: 122px;
+        color: grey;
+        
+        }
+
+
+
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: white;
+            position: absolute;
+            overflow: auto;
+            height: 83%;
+            top:    150px;
+          }
+          
+          .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+          }
+           
+          .sidebar a.active {
+            background-color: grey;
+            color: white;
+          }
+          
+          .sidebar a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+          }
+          
+          div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+          }
+          
+          @media screen and (max-width: 700px) {
+            .sidebar {
+              width: 100%;
+              height: auto;
+              position: relative;
+            }
+            .sidebar a {float: left;}
+            div.content {margin-left: 0;}
+          }
+
+          .log-out{
+              position: absolute;
+              top: 600px;
+              width: 83%;
+          }
+
+
+          .products_requestorders-container{
+              
+position: absolute;
+width: 1040px;
+height: 740px;
+left: 210px;
+top: 155px;
+
+background: #FFFFFF;
+          }
+
+
+          .print{
+            position: absolute;
+            width: 87px;
+            height: 31px;
+            left: 860px;
+            top: 50px;
+            color: white;
+            border-style: none;
+            background: #0077B6;
+            border-radius: 5px
+          }
+
+
+          table {
+            border-collapse: separate;
+            width: 1000px;
+            top: 10px;
+            position: absolute;
+            left: 0px;
+            
+            border-spacing: 0 16px;
+                 
+          }
+
+          th {
+            color: white;
+            background-color: #0077B6;
+          
+            font-weight: normal;
+          
+        
+          }
+
+          th, td {
+            text-align: left;
+            padding: 8px;
+             padding: 5px;
+          }
+        
+         
+          .colspan{
+            column-count: 1;
+            column-gap: 20px;
+          }
+
+          label{
+              display: block;
+              width: 230px;
+          
+          }
+
+          button{
+              display: block;
+              margin-bottom: 20px;
+          }
+
+          .outer-border{
+            width: 1030px;
+            height: 380px;
+            position: absolute;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            top: 250px;
+            left: 5px;
+        }
+        
+        
+                    .outer-border::-webkit-scrollbar {
+                        display: none;
+                    }
+
+
+                    .overlay2{
+                      position: absolute;
+                  width: 1263px;
+                  height: 900px;
+                  left: 0px;
+                  top: -1px;
+                  overflow: hidden;
+                  background: rgba(42, 40, 40, 0.12);
+                  }
+                  
+                  .details-form{
+                      position: absolute;
+                  width: 682px;
+                  height: 682px;
+                  left: 322px;
+                  top: 83px;
+                  
+                  background: #FFFFFF;
+                  border-radius: 3px;
+                  }
+
+  
+
+
+                  ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    left: 0px;
+                    position: absolute;
+                    top: 150px;
+                    width: 100%;
+                    border-bottom: 1px  solid #474646;
+                    border-top: 1px  solid #474646 ;
+                  }
+                  
+                  li {
+                    float: left;
+                  }
+                  
+                  li a {
+                    display: block;
+                    color: #474646;
+                    text-align: center;
+                    padding-left: 120px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    text-decoration: none;
+                  
+                    
+                  }
+                  
+                  li a:hover {
+                    
+                    color: #0077B6;
+                   
+                  }
+                  .active2  {
+        
+                    color: #ccc;
+              
+    
+                  }

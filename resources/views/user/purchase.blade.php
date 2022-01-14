@@ -55,10 +55,13 @@
             border-radius: 5px;" onclick="document.location='Page8.html'">Edit info</button>
             
         </div>
-        <div class="checkout-item">
+        <div class="checkout-item1">
             <table id="productCheckout">
                 @foreach ($purchases as $item)
                     @foreach ($item->item as $prod)
+                        {{-- @if($prod->status != 'Completed')
+
+                        @endif() --}}
                         <tr>
                             <td><img src="{{asset('css/Product/'.$prod->product->product_img)}}" style="width: 89px;
                                 height: 75px; "></td>
@@ -66,7 +69,7 @@
                             <td  style="color:#474646;" >P{{$prod->size->price}}</td>
                             <td><Label style="color:#474646;"></Label>{{$prod->product_qty}}</Label></td>
                             <td  style="color:#474646;">P{{$prod->total_price}}</td>
-                            <td><Label style="color:#474646;"></Label>{{$prod->purchase->status}}</Label></td>
+                            <td><Label style="color:#474646;"></Label>{{$prod->status}}</Label></td>
                         </tr>
                     @endforeach
                 @endforeach
@@ -76,6 +79,5 @@
     </div>
 </div>
 
-<div class="line"></div>
 
 @endsection

@@ -851,6 +851,20 @@ border: 1px solid #0077B6;
     overflow-y: scroll;
 }
 
+
+.checkout-item1{
+    position: absolute;
+    width: 1175px;
+    height: 223px;
+    left: 20px;
+    top: 200px;
+    border: 1px solid #ccc; 
+    background:white;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .customer-info{
     position: absolute;
     width: 1175px;
