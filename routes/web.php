@@ -45,5 +45,11 @@ Route::group(['middleware' => 'CheckRole:admin'],function(){
     Route::post('/admin/order/accept/{id}', [App\Http\Controllers\AdminController::class, 'accept'])->name('admin.accept');
     Route::post('/admin/order/processing/{id}', [App\Http\Controllers\AdminController::class, 'done_process'])->name('admin.done_process');
     Route::post('/admin/order/completed/{id}', [App\Http\Controllers\AdminController::class, 'completed'])->name('admin.completed');
-    
+
+    Route::post('/admin/product/add', [App\Http\Controllers\ProductController::class, 'addproduct'])->name('product.add');
+    Route::delete('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('product.destroy');
+    Route::get('/admin/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'editPage'])->name('product.editpage');
+    Route::post('/admin/product/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
+
+    Route::post('/admin/product/search', [App\Http\Controllers\ProductController::class, 'search'])->name('product.search');
 });

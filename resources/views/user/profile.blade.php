@@ -3,9 +3,6 @@
 @section('content')
 <div class="container">
     <h2>My Account</h2>
-
-    
-     
     <div class="account-info">
 
         <div class="profile">
