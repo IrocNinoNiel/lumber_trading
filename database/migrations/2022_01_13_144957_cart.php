@@ -20,6 +20,7 @@ class Cart extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->foreignId('size_id')->constrained()->onDelete('cascade');
+            $table->integer('status');
             $table->timestamps();
         });
     }

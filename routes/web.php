@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -24,3 +23,5 @@ Route::get('/user/profile', [App\Http\Controllers\UserController::class, 'profil
 Route::get('/user/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
 Route::get('/user/addcart/{id}', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.addcart');
 Route::post('/user/addcart/{id}',[App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+Route::post('/user/checkout',[App\Http\Controllers\CartController::class, 'toCheckout'])->name('cart.tocheckout');
+Route::delete('/user/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');

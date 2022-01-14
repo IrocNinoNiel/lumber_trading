@@ -10,6 +10,18 @@
     </script>
 @endif
 
+@if(session('deleted'))
+    <script>
+        alert('Product Deleted')
+    </script>
+@endif
+
+@if(session('noproduct'))
+    <script>
+        alert('No Product Selected')
+    </script>
+@endif
+
 @if(session('error'))
     <script>
         alert('Error Occured')

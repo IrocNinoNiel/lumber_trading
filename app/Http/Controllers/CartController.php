@@ -29,6 +29,7 @@ class CartController extends Controller
     public function index()
     {
         $carts = Cart::all();
+
         return view('user.cart')->with('carts',$carts);
     }
 
@@ -66,5 +67,30 @@ class CartController extends Controller
 
 
         return Redirect::route('cart.index')->with('success','Product Added');
+    }
+
+    public function toCheckout(Request $request)
+    {
+        $checkoutArray = [];
+
+        if(!$request->order){
+            return Redirect::route('cart.index')->with('noproduct','Product is Deleted');
+        }
+
+        foreach($request->order as $ids){
+            $checkout = Cart::find($ids);
+            array_push($checkoutArray,$checkout);
+        }
+
+        return view('user.checkout')->with('products',$checkoutArray);
+        
+    }
+
+    public function destroy($id){
+        $cart = Cart::find($id);
+        if(is_null($cart)) abort(404);
+
+        $cart->delete();
+        // return Redirect::route('cart.index')->with('deleted','Product is Deleted');
     }
 }
