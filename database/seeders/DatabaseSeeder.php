@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
             // UserTypeSeeder::class,
             // UserSeeder::class,
             // ProductSeeder::class,
-            SizeSeeder::class
+            // SizeSeeder::class
+            // CheckoutSeeder::class,
+            // PaymentSeeder::class
         ]);
     }
 }

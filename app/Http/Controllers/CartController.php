@@ -29,7 +29,6 @@ class CartController extends Controller
     public function index()
     {
         $carts = Cart::all();
-
         return view('user.cart')->with('carts',$carts);
     }
 
@@ -69,9 +68,22 @@ class CartController extends Controller
         return Redirect::route('cart.index')->with('success','Product Added');
     }
 
+    public function checkOutUI()
+    {
+        $checkoutArray = session()->get('checkoutArray');
+        $totalSum = session()->get('totalSum');
+
+        if(!$checkoutArray || !$totalSum ){
+            return Redirect::route('cart.index');
+        }
+
+        return view('user.checkout')->with('products',$checkoutArray)->with('totalSum',$totalSum);
+    }
+
     public function toCheckout(Request $request)
     {
         $checkoutArray = [];
+        $totalSum = 0;
 
         if(!$request->order){
             return Redirect::route('cart.index')->with('noproduct','Product is Deleted');
@@ -80,10 +92,10 @@ class CartController extends Controller
         foreach($request->order as $ids){
             $checkout = Cart::find($ids);
             array_push($checkoutArray,$checkout);
+            $totalSum += $checkout->total_price;
         }
-
-        return view('user.checkout')->with('products',$checkoutArray);
         
+        return redirect()->route( 'cart.tocheckoutui' )->with( ['checkoutArray' => $checkoutArray,'totalSum' =>$totalSum] );
     }
 
     public function destroy($id){

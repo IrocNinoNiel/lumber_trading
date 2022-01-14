@@ -16,18 +16,16 @@ body{
     align-items: center;
     align-content: center;
     margin:auto;
-    
-
 
 }
 
 
 .rectangle1 {
-width:1263px;
-height: 237px;
+    width:1263px;
+    height: 237px;
 
 
-background: #0077B6;
+    background: #0077B6;
 }
 .search input{
 position: absolute;
@@ -158,7 +156,7 @@ line-height: 21px;
 }
 
 
-.container{
+/* .container{
     position: absolute;
 width: 1240px;
 height: 625px;
@@ -167,7 +165,7 @@ top: 260px;
 
 background: #FFFFFF;
 border-radius: 3px;
-}
+} */
 
 h2{
     position: absolute;
@@ -219,6 +217,7 @@ color: #474646;
     color: #0077B6;
   
 }
+
 
 .plywood{
     position: absolute;
@@ -747,18 +746,17 @@ background-color: white;
 
 
 table {
-    border-collapse: separate;
-    width: 1175px;
-    top: 50px;
+    border-collapse: collapse;
+    width: 1200px;
+    top: 110px;
     position: absolute;
     left: 20px;
 
+    border-collapse: separate;
     border-spacing: 0 16px;
     
     
   }
-
-
   
   th, td {
     text-align: left;
@@ -773,7 +771,7 @@ table {
 
 
  
- 
+  tr:nth-child(even){background-color: #f2f2f2}
   
   th {
     background-color:#0077B6;
@@ -844,31 +842,23 @@ border: 1px solid #0077B6;
 
 .checkout-item{
     position: absolute;
-width: 1175px;
+width: 1200px;
 height: 223px;
 left: 20px;
 top: 200px;
-border: 1px solid #ccc; 
-background:white;
-border-radius: 5px;
-overflow-x: hidden;
-overflow-y: scroll;
 
-}
+background:#f2f2f2;
 
-.checkout-item::-webkit-scrollbar {
-    display: none;
 }
 
 .customer-info{
     position: absolute;
-    width: 1175px;
+    width: 1200px;
     height: 131px;
-    left: 20px;
-    top: 60px;
-    border: 1px solid #ccc; 
-    background:white;
-    border-radius: 5px;
+left: 20px;
+top: 60px;
+
+background:#f2f2f2;
 
 }
 
@@ -909,26 +899,23 @@ border-radius: 3px;
 
 
 .payment{
-    width: 1175px;
-    height: 223px;  
+    width: 1200px;
+    height: 223px;
+    background:#f2f2f2;   
      position: absolute;
      left: 20px;;
     top: 450px;
-    border: 1px solid #ccc; 
-background:white;
-border-radius: 5px;
 }
 
 
 .purchase-item{
     position: absolute;
-    width: 1175;
+    width: 1200px;
     height: 300px;
 left: 20px;
 top: 60px;
-border: 1px solid #ccc; 
-background:white;
-border-radius: 5px;
+
+background:#f2f2f2;
 }
 
 
@@ -952,13 +939,13 @@ border-radius: 5px;
 
 .profile{
     
-position: absolute;
-width: 165px;
-height: 147px;
-left: 30px;
-top:50px;
-border-radius: 100%;
-background: #FFFFFF;
+    position: absolute;
+    width: 165px;
+    height: 147px;
+    left: 30px;
+    top:50px;
+    border-radius: 100%;
+    background: #FFFFFF;
 }
 
 .user-details{

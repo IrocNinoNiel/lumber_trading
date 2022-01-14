@@ -57,11 +57,8 @@
                     @endforeach
                 @endif
             </table>
-
         </div>
-        
         <button type="submit" class="checkout_placeorder">Checkout</button>
-
     </form>
 
     <p class="totalprice">TOTAL: P<label id="totalPriceUI">{{$carts->where('status', 0)->sum('total_price')}}</label></p>

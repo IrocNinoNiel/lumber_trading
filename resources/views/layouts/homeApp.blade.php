@@ -72,7 +72,7 @@
                     <label>{{ Auth::user()->name }}</label>
                     <div class="dropdown-content">
                         <a href="{{ route('profile.index') }}">My Account</a>
-                        <a href="{{ route('cart.index') }}">My Purchases</a>
+                        <a href="{{ route('purchase.index') }}">My Purchases</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
