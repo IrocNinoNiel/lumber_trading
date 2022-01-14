@@ -51,13 +51,13 @@
             background-color: #0077B6;
             color: white;
             border-style: none;
-            border-radius: 5px;" onclick="document.location='Page8.html'">Edit info</button>
+            border-radius: 5px;">Edit info</button>
+
+            {{-- onclick="document.location='Page8.html'" --}}
             
         </div>
 
-        <form method="POST" action="{{ route('purchase.store') }}">
-            @csrf
-
+        <form id="checkoutForm">
             <div class="checkout-item">
 
         
@@ -193,7 +193,8 @@
                 left: 506px;
                 top: 130px;"
                 name="pay_option"
-                value=1>
+                value=1
+                id="gcash">
     
                 <label style="position: absolute;
                 width: 61px;
@@ -216,7 +217,7 @@
                 left: 630px;
                 top: 130px;">Cash on Pickup</label>
     
-    
+{{--     
                 <button style="position: absolute;
                 width: 141px;
                 height: 40px;
@@ -225,24 +226,87 @@
                 background: #0077B6;
                 border-radius: 5px;
                 border-style: none;
-                color: white;">Upload a Receipt</button>
+                color: white;">Upload a Receipt</button> --}}
+
+                {{-- <input type="file"
+                id="gcashAvatar" 
+                name="gcashAvatar"
+                style="position: absolute;
+                width: 141px;
+                height: 40px;
+                left: 600px;
+                top: 170px;
+                display:none;
+                "> --}}
                             
             </div>
 
         </div>
     
-        <button type="submit" class="checkout_placeorder">Place Order</button>
+        <button type="submit" class="checkout_placeorder" id="submitCheckout">Place Order</button>
     </form>
     <p class="totalprice">TOTAL: P<label id="totalPriceCheckout">{{$totalSum}}</label></p>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
 <script>
+
     function deleteOnCheckOut(id,price){
         $(`table#productCheckout tr#${id}`).remove();
         var totalPrice = parseInt(document.getElementById("totalPriceCheckout").innerHTML);
         var updateTotal = totalPrice-price;
         document.getElementById("totalPriceCheckout").innerHTML = updateTotal
     }
+
+    // $('input[name="pay_option"]').click(function() {
+    //     var payOpts = $('input[name="pay_option"]:checked').val();
+    //     console.log(payOpts)
+    //     if(payOpts == 1){
+    //         $('#gcashAvatar').show();
+    //     }else{
+    //         $('#gcashAvatar').hide();
+    //     }
+    // })
+
+    $("#submitCheckout").click(function(e){
+
+        e.preventDefault();
+        var delOpts = $('input[name="del_option"]:checked').val();
+        var payOpts = $('input[name="pay_option"]:checked').val();
+
+        if(!delOpts || !payOpts){
+            alert('Please Choose Payment and Delivery Option');
+        }else{
+
+            var url = "/user/purchase";
+            $.ajaxSetup({
+                headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#checkoutForm").serialize(),
+                success:function(data)
+                {
+                    if(!data.success){
+                        alert('Something is Wrong');
+                    }
+                    else{
+                        alert('Succesfully purchase the item');
+                        window.location.href = '/user/purchase';
+                    }
+                },
+                error:function(error)
+                {
+                    console.log(error)
+                    alert("Server Error");
+                    console.log(error.responseText)
+                }
+            })   
+        }
+    });
 </script>
 
 @endsection

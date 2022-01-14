@@ -60,7 +60,7 @@
                 @foreach ($purchases as $item)
                     @foreach ($item->item as $prod)
                         <tr>
-                            <td><img src="{{asset('css/Product/2.jpg')}}" style="width: 89px;
+                            <td><img src="{{asset('css/Product/'.$prod->product->product_img)}}" style="width: 89px;
                                 height: 75px; "></td>
                             <td><Label style="color:#474646;"></Label>{{$prod->product->name}}</Label></td>
                             <td  style="color:#474646;" >P{{$prod->size->price}}</td>

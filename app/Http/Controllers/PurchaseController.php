@@ -25,38 +25,75 @@ class PurchaseController extends Controller
 
     public function store(Request $request)
     {
+        if(request()->ajax()){
 
-        $this->validate($request,[
-            'del_option' => 'required',
-            'pay_option' => 'required',
-            'product_id' => 'required'
-        ]);
+            $imageName = '';
 
-        $purchase = new Purchase;
+            // if($request->pay_option == 1){
+            //     $imageName = time().'.'.$request->gcashpic->extension();  
+            //     $request->gcashpic->move(public_path('images'), $imageName);
+            // }
 
-        $date = new DateTime();
-        $purchase->date = $date;
-        $purchase->status = 'pending';
-        $purchase->image = '';
-        $purchase->user_id = Auth::user()->id;
-        $purchase->checkout_id = $request->del_option;
-        $purchase->payment_method_id = $request->pay_option;
+            $purchase = new Purchase;
 
-        $purchase->save();
+            $date = new DateTime();
+            $purchase->date = $date;
+            $purchase->status = 'pending';
+            $purchase->image = $imageName;
+            $purchase->user_id = Auth::user()->id;
+            $purchase->checkout_id = $request->del_option;
+            $purchase->payment_method_id = $request->pay_option;
 
-        foreach($request->product_id as $id){
-            $cart = Cart::find($id);
+            $purchase->save();
 
-            $item = new Item;
-            $item->total_price = $cart->total_price;
-            $item->product_qty = $cart->product_qty;
-            $item->purchase_id = $purchase->id;
-            $item->product_id = $cart->product_id;
-            $item->size_id = $cart->size_id;
+            foreach($request->product_id as $id){
+                $cart = Cart::find($id);
 
-            $item->save();
+                $item = new Item;
+                $item->total_price = $cart->total_price;
+                $item->product_qty = $cart->product_qty;
+                $item->purchase_id = $purchase->id;
+                $item->product_id = $cart->product_id;
+                $item->size_id = $cart->size_id;
+
+                $item->save();
+            }
+
+            return response()->json(['msg'=>$request->all(), 'success'=>true]);  
+
         }
 
-        return redirect()->route('purchase.index');
+        // $this->validate($request,[
+        //     'del_option' => 'required',
+        //     'pay_option' => 'required',
+        //     'product_id' => 'required'
+        // ]);
+
+        // $purchase = new Purchase;
+
+        // $date = new DateTime();
+        // $purchase->date = $date;
+        // $purchase->status = 'pending';
+        // $purchase->image = '';
+        // $purchase->user_id = Auth::user()->id;
+        // $purchase->checkout_id = $request->del_option;
+        // $purchase->payment_method_id = $request->pay_option;
+
+        // $purchase->save();
+
+        // foreach($request->product_id as $id){
+        //     $cart = Cart::find($id);
+
+        //     $item = new Item;
+        //     $item->total_price = $cart->total_price;
+        //     $item->product_qty = $cart->product_qty;
+        //     $item->purchase_id = $purchase->id;
+        //     $item->product_id = $cart->product_id;
+        //     $item->size_id = $cart->size_id;
+
+        //     $item->save();
+        // }
+
+        // return redirect()->route('purchase.index');
     }
 }
