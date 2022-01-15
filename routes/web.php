@@ -35,8 +35,7 @@ Route::group(['middleware' => 'CheckRole:buyer'],function(){
 
     Route::get('/user/purchase', [App\Http\Controllers\PurchaseController::class, 'index'])->name('purchase.index');
     Route::post('/user/purchase', [App\Http\Controllers\PurchaseController::class, 'store'])->name('purchase.store');
-
-
+    Route::post('/product/search', [App\Http\Controllers\ProductController::class, 'searchItem'])->name('product.searchuser');
 });
 
 Route::group(['middleware' => 'CheckRole:admin'],function(){

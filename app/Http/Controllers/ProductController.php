@@ -106,6 +106,67 @@ class ProductController extends Controller
         }
     }
 
+    public function searchItem(Request $request){
+
+        $arrayOverlay = array(
+            [
+                'name'=>'lumber',
+                'overlay-name'=>'overlay-lumber'
+            ],
+            [
+                'name'=>'plywood',
+                'overlay-name'=>'overlay-plywood'
+            ],
+            [
+                'name'=>'steelbars',
+                'overlay-name'=>'overlay-steelbars'
+            ],
+            [
+                'name'=>'nails',
+                'overlay-name'=>'overlay-nail'
+            ],
+            [
+                'name'=>'sawdust',
+                'overlay-name'=>'overlay-sawdust'
+            ],
+            [
+                'name'=>'doorknob',
+                'overlay-name'=>'overlay-doorknob'
+            ],
+            [
+                'name'=>'padlock',
+                'overlay-name'=>'overlay-padlock'
+            ],
+            [
+                'name'=>'rod',
+                'overlay-name'=>'overlay-rod'
+            ],
+            [
+                'name'=>'sandpaper',
+                'overlay-name'=>'overlay-sandpaper'
+            ],
+            [
+                'name'=>'wire',
+                'overlay-name'=>'overlay-wire'
+            ],
+            [
+                'name'=>'roof',
+                'overlay-name'=>'overlay-roof'
+            ],
+        );
+
+        // print_r($request->searchItem);
+
+        if(!$request->searchItem || $request->searchItem == ''){
+            $products = Product::all();
+            return view('homepage')->with('products',$products)->with('arrayOverlay',$arrayOverlay);
+        }else{
+            $products = Product::where('name','LIKE','%'.$request->searchItem.'%')->get();
+            return view('homepage')->with('products',$products)->with('arrayOverlay',$arrayOverlay);
+        }
+    }
+
+
     public function destroy($id){
         $product = Product::find($id);
         if(is_null($product)) abort(404);

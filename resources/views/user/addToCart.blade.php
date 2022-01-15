@@ -17,7 +17,6 @@
             background-size: cover;">
            
         </div>
-
         @if(count($product->size) > 1)
             <label class="price" id="priceTag">P{{$product->size[0]->price}} - P{{$product->size[count($product->size)-1]->price}}</label>
         @else
@@ -26,7 +25,7 @@
         <label class="size">Size</label>
         <label class="stock">Stock</label>
         <label class="quantity">Quantity</label>
-        <label class="stock-num">{{$product->size[0]->qty}}</label>
+        <label class="stock-num" id="stock">{{$product->size[0]->qty}}</label>
         
         <form method="POST" action="{{ route('cart.store',$id) }}">
             @csrf
@@ -56,6 +55,7 @@
         var sizeInfo = items.filter(item => item.id == getId)
 
         document.getElementById("priceTag").innerHTML = `P${sizeInfo[0].price}`
+        document.getElementById("stock").innerHTML = `${sizeInfo[0].qty}`
 
         console.log(document.getElementById("priceTag"));
     }

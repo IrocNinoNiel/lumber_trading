@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use DateTime;
 use App\Models\Cart;
-use App\Models\Purchase;
 use App\Models\Item;
+use App\Models\Size;
+use App\Models\Purchase;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,7 +49,12 @@ class PurchaseController extends Controller
             $purchase->save();
 
             foreach($request->product_id as $id){
+
                 $cart = Cart::find($id);
+
+                $size = Size::find($cart->size_id);
+                $size->qty = $size->qty - $cart->product_qty;
+                $size->save();
 
                 $item = new Item;
                 $item->total_price = $cart->total_price;

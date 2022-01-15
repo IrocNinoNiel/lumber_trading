@@ -28,10 +28,12 @@
 
             <div class="logo"></div>
                 
-            
             <div  class="search">
-                <input  type="text" placeholder="Search">
-                <i class="fas fa-search search-icon"></i>
+                <form action="{{route('product.searchuser')}}" method="POST">
+                    @csrf
+                    <input type="text" placeholder="Search" name="searchItem" id="searchItem">
+                    <button type="submit"><i class="fas fa-search search-icon"></i></button>
+                </form>
             </div>
 
             <div onclick="document.location='/'">  

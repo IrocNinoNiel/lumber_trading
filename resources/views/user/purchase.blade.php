@@ -34,7 +34,8 @@
             top: 90px;">  {{ Auth::user()->address }}</label>
 
 
-                <img src="{{asset('css/profile/anon.jpg')}}" style="position: absolute;
+            @if (Auth::user()->user_img == '')
+                <img src="{{asset('css/profile/anon.jpg')}}"  style="position: absolute;
                 width: 91px;
                 height: 75px;
                 left: 800px;
@@ -42,6 +43,16 @@
                 background-size: cover;
                 border-radius: 5px;
                 ">
+            @else
+                <img src="{{asset('css/profile/'.Auth::user()->user_img)}}" s style="position: absolute;
+                width: 91px;
+                height: 75px;
+                left: 800px;
+                top: 40px;
+                background-size: cover;
+                border-radius: 5px;
+                ">
+            @endif
 
 
             <button style="position: absolute;
