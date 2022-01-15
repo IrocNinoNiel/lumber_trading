@@ -71,7 +71,7 @@
                     <i class="far fa-user-circle fa-lg user-icon"></i>
                     <label>{{ Auth::user()->name }}</label>
                     <div class="dropdown-content">
-                        <a href="{{ route('profile.index') }}">My Account</a>
+                        <a href="{{ route('profile.index',Auth::user()->id) }}">My Account</a>
                         <a href="{{ route('purchase.index') }}">My Purchases</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

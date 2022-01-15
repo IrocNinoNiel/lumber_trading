@@ -37,7 +37,7 @@
                 </tr> --}}
                 @if(count($carts) != 0)
                     @foreach ($carts as $cart)
-                        @if ($cart->status == 0)
+                        @if ($cart->status == 0 && Auth::user()->id == $cart->user->id)
                             <tr>
                                 <td><input type="checkbox" checked name="order[]" value="{{$cart->id}}" onchange="manageCart(this,{{$cart->total_price}})"></td>
                                 <td><img src="{{asset('css/Product/'.$cart->product->product_img)}}" style="width: 89px;

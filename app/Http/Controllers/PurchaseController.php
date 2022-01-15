@@ -19,7 +19,8 @@ class PurchaseController extends Controller
 
     public function index()
     {
-        $purchases = Purchase::all();
+        // $purchases = Purchase::all();
+        $purchases = Purchase::where('user_id',Auth::user()->id)->get();
         return view('user.purchase')->with('purchases',$purchases);
     }
 

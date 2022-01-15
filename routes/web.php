@@ -20,7 +20,11 @@ Route::get('/',[App\Http\Controllers\HomeController::class, 'index'])->name('hom
 
 Route::group(['middleware' => 'CheckRole:buyer'],function(){
 
-    Route::get('/user/profile', [App\Http\Controllers\UserController::class, 'profile'])->name('profile.index');
+    Route::get('/user/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('profile.index');
+    Route::post('/user/profile/editbasic/{id}', [App\Http\Controllers\UserController::class, 'editBasicInfo'])->name('profile.editbasicinfo');
+    Route::post('/user/profile/editphoto/{id}', [App\Http\Controllers\UserController::class, 'imageUploadPost'])->name('profile.imageuploadpost');
+    Route::post('/user/profile/changepassword/{id}', [App\Http\Controllers\UserController::class, 'changePassword'])->name('profile.changepassword');
+    Route::delete('/user/profile/destroy/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/user/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
     Route::get('/user/addcart/{id}', [App\Http\Controllers\CartController::class, 'addToCart'])->name('cart.addcart');

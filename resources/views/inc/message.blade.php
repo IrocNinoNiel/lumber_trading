@@ -24,6 +24,24 @@
 
 @if(session('error'))
     <script>
-        alert('Error Occured')
+        alert('Please Check your Inputs')
+    </script>
+@endif
+
+@if(session('incorrect'))
+    <script>
+        alert('Password is Incorrect')
+    </script>
+@endif
+
+@if(session('notmatch'))
+    <script>
+        alert('Password Dont Match')
+    </script>
+@endif
+
+@if(session('successpass'))
+    <script>
+        alert('Password Change Succesfully')
     </script>
 @endif
