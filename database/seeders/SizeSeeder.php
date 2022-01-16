@@ -27,6 +27,12 @@ class SizeSeeder extends Seeder
                 'qty' => 100,
                 'product_id' => 1
             ],
+            [
+                'name' => '6x10',
+                'price' => 400,
+                'qty' => 200,
+                'product_id' => 2
+            ],
         ]);
     }
 }

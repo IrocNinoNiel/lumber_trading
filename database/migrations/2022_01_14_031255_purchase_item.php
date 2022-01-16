@@ -20,6 +20,7 @@ class PurchaseItem extends Migration
             $table->foreignId('purchase_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained()->onDelete('cascade');
             $table->foreignId('size_id')->constrained()->onDelete('cascade');
+            $table->string('status')->default('Pending');
             $table->timestamps();
         });
     }
