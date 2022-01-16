@@ -65,7 +65,7 @@
                     <button onclick="document.location='{{ route('login') }}'">Login</button>
                 </div>
             @else
-                <div class="notification" onclick="document.location='Page2.html'">
+                <div class="notification" onclick="document.location='/'">
                     <i class="far fa-bell fa-lg bell-icon"></i>
                     <label>Notification</label>
                 </div>

@@ -45,3 +45,9 @@
         alert('Password Change Succesfully')
     </script>
 @endif
+
+@if(session('errorqty'))
+    <script>
+        alert('Quantity is Invalid')
+    </script>
+@endif

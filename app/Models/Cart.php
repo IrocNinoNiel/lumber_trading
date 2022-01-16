@@ -14,7 +14,8 @@ class cart extends Model
         'product_qty',
         'user_id',
         'product_id',
-        'size_id'
+        'size_id',
+        'status'
     ];
 
     public function user(){

@@ -49,6 +49,10 @@ class CartController extends Controller
 
         $size = Size::find($request->selectSize);
 
+        if($request->customerQty > $size->qty){
+            return back()->with('errorqty','Quantity is Invalid');
+        } 
+
         $product_qty = $request->customerQty;
         $total_price = $product_qty * $size->price;
         $user_id = Auth::user()->id;
@@ -62,6 +66,7 @@ class CartController extends Controller
         $cart->user_id = $user_id;
         $cart->product_id = $product_id;
         $cart->size_id = $product_size_id;
+        $cart->status = 0;
 
         $cart->save();
 
