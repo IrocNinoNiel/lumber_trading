@@ -55,7 +55,7 @@
             @endif
 
 
-            <button style="position: absolute;
+            {{-- <button style="position: absolute;
             width: 118px;
             height: 35px;
             left: 1000px;
@@ -63,7 +63,7 @@
             background-color: #0077B6;
             color: white;
             border-style: none;
-            border-radius: 5px;" onclick="document.location='Page8.html'">Edit info</button>
+            border-radius: 5px;" onclick="document.location='Page8.html'">Edit info</button> --}}
             
         </div>
         <div class="checkout-item1">

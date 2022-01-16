@@ -224,7 +224,7 @@
         
     </div>
 
-    <div class="help">
+    {{-- <div class="help">
         <a href="url">Help</a>
-    </div>
+    </div> --}}
 @endsection

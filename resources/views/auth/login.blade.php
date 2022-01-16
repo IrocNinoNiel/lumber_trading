@@ -96,9 +96,9 @@
                 @enderror
             </div>
 
-            <div class="forgot-pass">
+            {{-- <div class="forgot-pass">
                 <a href="url">Forgot password?</a>
-            </div>
+            </div> --}}
     
             <div class="line"></div>
 
@@ -114,7 +114,7 @@
 
         
     </div>
-    <div class="help">
+    {{-- <div class="help">
         <a href="url">Help</a>
-    </div>
+    </div> --}}
 @endsection
